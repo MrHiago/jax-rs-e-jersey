@@ -1,21 +1,29 @@
 package br.com.alura.loja.modelo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
 import com.google.gson.Gson;
 import com.thoughtworks.xstream.XStream;
 
-public class Carrinho {
+public class Carrinho implements Serializable {
 
+	private static final long serialVersionUID = 6330798360046463559L;
+	
 	private List<Produto> produtos = new ArrayList<Produto>();
 	private String rua;
 	private String cidade;
 
 	private long id;
-	
-	public Carrinho() {}
+
+	public Carrinho() {
+	}
 
 	public Carrinho(List<Produto> produtos, String rua, String cidade, long id) {
 		super();
